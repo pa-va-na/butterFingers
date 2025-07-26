@@ -3,91 +3,22 @@
     <head>
         <title>butterFingers</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" 
-rel="stylesheet">
-        <style>
-            body {
-                background-color:  rgb(253, 221, 226);
-                border: 5px dashed rgb(241, 150, 165);    
-                box-sizing: border-box;
-                margin: 0;
-                border-radius: 20px;
-                height: 100vh;
-                font-family:Love Ya Like A Sister ;
-            }
-            .title {
-                color: rgb(231, 95, 118);
-                font-family:Love Ya Like A Sister;
-                font-size: 80px;
-                margin-top: 50px;
-                text-align: center;
-                background-color: rgb(253, 221, 226);
-                border: none;
-            }
-            .textBlock {
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-            }
-            .inputTextClass {
-                display: flex;
-                justify-content: center;
-                padding: 40px 300px;
-            }
-            .displayText {
-                color: rgb(100, 21, 34);;
-                font-family: monospace;
-                font-size: 22px;
-                text-align: center;
-                margin-top: 20px;
-                margin-bottom: 100px;
-            }
-            .extras {
-                font-size: 25px;
-                color: rgb(121, 29, 45);
-                display: flex;
-                flex-direction: row;
-            }
-            .wpm,.accuracy,.restartButton{
-                margin-left: 20px;
-                flex: 1;
-                
-            }
-            .wpm {
-                margin-left: 100px;
-            }
-            .restartButton {
-                margin-right: 100px;
-                border: none;
-                background-color: rgb(253, 221, 226);
-                font-family:Love Ya Like A Sister ;
-                font-size: 20px;
-                color: rgb(121, 29, 45);
-            }
-            .inputText {
-                border: none;
-                background-color: rgb(247, 218, 223);
-                padding: 30px 100px;
-                font-family: monospace;
-                font-size: 20px;
-            }
-            .correct {
-                border: 2px solid green;
-                color: rgb(2, 68, 2);
-                
-            }
-            .wrong {
-                color: rgb(184, 5, 5);
-            }
-
-
-        </style>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" 
+        rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div class="container">
         <div class="title">
             BUTTERFINGERS
         </div>
+        <div class="flower"></div>
+        <div class="flower"></div><div class="flower"></div>
         <div class="textBlock">
             <div class="inputTextClass">
                 <input class="inputText" type="text" placeholder="Start Typing">
@@ -97,49 +28,10 @@ rel="stylesheet">
         <div class="extras">
             <div class="wpm">WPM</div>
             <div class="accuracy">Accuracy</div>
+            <div class="timetaken">time</div>
             <div class="restart"><button class="restartButton">Restart</button></div>
         </div>
-        <script>
-            let sentences=["In a world that moves faster each day, where moments often slip by unnoticed and people chase after goals without pausing to breathe, it becomes increasingly important to slow down and appreciate the little things, the warmth of sunlight , the quiet kindness in a strangers smile for in these small, seemingly insignificant experiences, we often find the greatest meaning  and the reminder that life is not just about reaching destinations, but enjoying the journey.",
-                "Ice cream is pure happiness in a cone - cold, sweet, and endlessly delightful; from classic vanilla to quirky bubblegum, each scoop carries childhood memories, spontaneous cravings, and sticky smiles. Whether its a sunny day or a midnight snack, ice cream never judges - it simply melts hearts, one bite at a time.",
-                "I love how adulthood comes with thrilling perks like paying bills, pretending to understand tax forms, getting excited about discounted detergent, and calling it a “productive day” just because I folded laundry; truly, nothing screams success louder than googling symptoms at 2 a.m. and forgetting why you walked into a room.",
-                "Kerala, known as “Gods Own Country,” is a lush paradise of swaying palm trees, serene backwaters, misty hills, and golden beaches, where vibrant traditions, spicy cuisine, and warm smiles create a timeless charm that captivates every traveler seeking beauty, culture, and peace in natures most graceful embrace.",
-                "Indian food is a vibrant explosion of flavors, where every bite tells a story—fiery curries, tangy pickles, fragrant biryanis, crispy dosas, and sweet gulab jamuns all come together in a colorful celebration of spices, culture, and tradition that turns even the simplest meal into an unforgettable culinary adventure.",
-                "Raindrops whispered secrets to the windowpane, while trees danced in the wind like old friends reunited; somewhere, a kettle sang its soft song, and the scent of wet earth rose gently, wrapping the world in a quiet, fragrant hush.",
-                "We chase deadlines, scroll endlessly, sip lukewarm coffee, and forget that a quiet walk, a deep breath, or a smile from a stranger might matter more than anything we thought was urgent just a few hours ago."
-                ,"Woke up ready to conquer the world, but tripped over my own shoe, spilled coffee on my shirt, missed the bus, and forgot why I walked into the kitchen. Productivity? Please. I deserve a medal just for not spontaneously combusting before lunch.",
-                "Amid the noise of deadlines and distractions, there's beauty in slowing down — sipping warm tea, watching clouds drift, or simply being still. You dont always have to be productive. Sometimes, just existing gently in the moment is more than enough.",
-                "Love isnt always loud. Sometimes its in remembering the way someone takes their coffee, saving the last piece of cake, or texting “reached?” at midnight. Its in small, quiet moments that love grows strongest ,not in grand gestures, but in simple, consistent acts of care and presence.",
-                "Time travel may not need machines sometimes a song, a smell, or an old photo instantly takes you back. Suddenly, youre five again, holding your grandmas hand, or laughing at something you forgot you loved. The past lives quietly in us, waiting for little moments to wake it up."
-            ];
-            function randomInt(min,max){
-                return Math.floor(Math.random()*(max-min+1)+min);
-            }
-            curr=randomInt(0,10);
-            curSentence=sentences[curr];
-            document.querySelector(".displayText").innerHTML=curSentence;
-            let inputBox=document.querySelector(".inputText");
-            let countLetter=0;
-            let substring="";
-            inputBox.addEventListener("input",() => {
-                const typedText=inputBox.value;
-                console.log(substring);
-                console.log(typedText);
-                let len=typedText.length;
-                if(typedText.substring(0,len)===sentences[curr].substring(0,len)){
-                    console.log(typedText.substring(0,len),"and",sentences[curr].substring(0,len));
-                    inputBox.classList.remove("wrong");
-                    inputBox.classList.add("correct");
-                }
-                else{
-                    inputBox.classList.remove("correct");
-                
-                    inputBox.classList.add("wrong");
-                }
-               
-            });
-
-            
-        </script>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
